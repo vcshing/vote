@@ -1,0 +1,58 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="/?refresh=1" class="link" >
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">{{pageName}}</div>
+      </div>
+    </div>
+
+      <div class="page-content infinite-scroll-content ptr-content">
+        <div class="ptr-preloader">
+          <div class="preloader"></div>
+          <div class="ptr-arrow"></div>
+        </div>
+        <div class="list sortable ">
+          <ui>
+          <div class="self_topicList">    </div>
+          </ui>
+              <div class="preloader infinite-scroll-preloader"></div>
+        </div>
+
+        <!-- <iframe src="http://www.webtech.tw/info.php?tid=%E7%94%A8_CSS_z-index_%E8%A8%AD%E8%A8%88%E5%A4%9A%E5%BC%B5%E5%9C%96%E7%89%87%E9%87%8D%E7%96%8A%E7%9A%84%E6%95%88%E6%9E%9C"></iframe>
+    -->
+    </div>
+  </div>
+</template>
+
+<script>
+    return {
+        data: function() {
+            //  debugger;
+            return {
+                "pageName": "我提交的心理測驗題目",
+                "type": "種類",
+                "subject": "題目",
+                "question": "問題",
+                "questionImage": "問題圖片(如有)",
+                "ansNum": "答案數量",
+                "submit": "提交"
+            }
+        },
+        on: {
+            // each object key means same name event handler
+            pageInit: function(page) {
+                // do something on page init
+                userSubmitExamListInit()
+            },
+            popupOpen: function(popup) {
+                // do something on popup open
+            },
+        },
+    }
+</script>

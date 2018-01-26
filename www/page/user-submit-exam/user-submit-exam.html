@@ -1,0 +1,108 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back" data-reload-current="true">
+            <i class="icon icon-back" ></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">{{pageName}}</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <form class="list" id="my-form">
+        <ul>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">{{type}}</div>
+                <div class="item-input-wrap submit-picker-type">
+                  <select name="type">
+                     <option value="">請選擇</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">{{subject}}</div>
+                <div class="item-input-wrap">
+                  <input type="text" name="subject" class="subject" placeholder="Subject">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">{{question}}</div>
+                <div class="item-input-wrap">
+                  <textarea name="question" placeholder="Question"></textarea>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">{{ansNum}}</div>
+                <div class="item-input-wrap">
+                  <select name="choiceNum" class="choiceNum">
+                    <option value="0">請選擇答案數量</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </li>
+          <div class="choiceList">
+
+          </div>
+        </ul>
+      </form>
+      <div class="block block-strong row">
+        <div class="col"><a class="button submitForm" href="#">{{submit}}</a></div>
+    <!--    <div class="col"><a class="button fill-form-from-data" href="#">Fill Form</a></div>-->
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+    return {
+        data: function() {
+            //  debugger;
+            return {
+                "pageName": "提交心理測驗題目",
+                "type": "種類",
+                "subject": "題目",
+                "question": "問題",
+                "questionImage": "問題圖片(如有)",
+                "ansNum": "答案數量",
+                "submit": "提交"
+            }
+        },
+        on: {
+            // each object key means same name event handler
+            pageInit: function(page) {
+                // do something on page init
+                userSubmitExamPageInit()
+            },
+            popupOpen: function(popup) {
+                // do something on popup open
+            },
+        },
+    }
+</script>

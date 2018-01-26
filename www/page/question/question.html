@@ -1,0 +1,105 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title questionTitle"></div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="card">
+
+      <div class="card-content card-content-padding">
+<div class="block">
+        <div class="question">
+
+        </div>
+        <br/>
+  </div>
+          <div class="list media-list">
+
+            <ul class = "questionAns">
+
+            </ul>
+          </div>
+
+      </div>
+      <div class="card-footer">
+    <!--    <a href="#" >Like</a>-->
+    <button data-popup=".result-popup" href="#" class="button  button-fill color-blue ansConfirm">確定</button>
+
+</div>
+      <div class="card-footer">
+        <button href="#" class="button button-fill color-gray statistics popup-open" data-popup=".demo-popup" data-ignore-cache="false">統計</button>
+
+      </div>
+</div>
+
+   <iframe class="fbcomment" frameborder="0" height="300" ></iframe>
+
+    </div>
+
+    <div class="popup result-popup">
+      <div class="page">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="title selectAnswerTitle">結果</div>
+            <div class="right"><a href="#" class="link  resultPopClose">關閉</a></div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="block selectAnswer">你沒有選擇答案哦!</div>
+            <div class="block"><button href="#" class="button-fill color-gray link popup-open button statistics" data-popup=".demo-popup" data-ignore-cache="false">統計</button>  </div>
+            <div class="block"><button href="#" class="button-fill color-pink link  button resultPopClose">關閉</button>  </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup demo-popup">
+      <div class="page">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="title ">統計</div>
+            <div class="right"><a href="#" class="link chartClose">關閉</a></div>
+          </div>
+        </div>
+        <div class="page-content chart-page-content">
+          <div class="block chartTitle"></div>
+            <div class="block chartQuestion"></div>
+              <div id="piechart" ></div>
+
+            <div class="block"><button href="#" class="button-fill color-pink link button chartClose " >關閉</button>  </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+</template>
+<script>
+    return {
+        data: function() {
+            return {}
+        },
+        on: {
+            // each object key means same name event handler
+            pageInit: function(page) {
+
+                userReadExamPageInit(page)
+                // do something on page init
+
+                //  debugger;
+            },
+            popupOpen: function(popup) {
+                // do something on popup open
+            },
+        },
+    }
+</script>
