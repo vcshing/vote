@@ -5,7 +5,7 @@ function ajaxGetQuestionDetail(array,callback) {
 
   $.ajax({
       type: "post",
-      url: "http://gogogo.synology.me/api/psychologicaltest/getdata.php",
+      url: "http://gogogo.synology.me/api/vote/getdata.php",
       data: {
           "page": array.page,
           "type": array.type,
@@ -28,7 +28,7 @@ function ajaxSubmitResult(array,callback) {
 
   $.ajax({
       type: "post",
-      url: "http://gogogo.synology.me/api/psychologicaltest/submitresult.php",
+      url: "http://gogogo.synology.me/api/vote/submitresult.php",
       data: {
           "deviceid": getDeviceID(),
           "questionid": array.questionid,
@@ -51,7 +51,7 @@ function ajaxGetStatisticsDetail(array,callback) {
 
   $.ajax({
       type: "post",
-      url: "http://gogogo.synology.me/api/psychologicaltest/getstatisticsdata.php",
+      url: "http://gogogo.synology.me/api/vote/getstatisticsdata.php",
       data: {
           "id": array.id
       },

@@ -5,7 +5,7 @@ function selfList_ajaxGetTopicList(array,callback) {
 
     $.ajax({
         type: "post",
-        url: "http://gogogo.synology.me/api/psychologicaltest/getdata.php",
+        url: "http://gogogo.synology.me/api/vote/getdata.php",
         data: {
             "page": array.page,
             "type": array.type,

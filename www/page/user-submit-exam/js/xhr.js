@@ -5,7 +5,7 @@ function ajaxSubmitQuestion(array,callback) {
 
     $.ajax({
         type: "post",
-        url: "http://gogogo.synology.me/api/psychologicaltest/addrecord.php",
+        url: "http://gogogo.synology.me/api/vote/addrecord.php",
         data: {
             "deviceid": getDeviceID(),
             "type": array.type,

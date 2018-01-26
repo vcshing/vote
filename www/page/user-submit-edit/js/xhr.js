@@ -5,7 +5,7 @@ function edit_ajaxGetQuestionDetail(array,callback) {
 
   $.ajax({
       type: "post",
-      url: "http://gogogo.synology.me/api/psychologicaltest/getdata.php",
+      url: "http://gogogo.synology.me/api/vote/getdata.php",
       data: {
           "page": array.page,
           "type": array.type,
@@ -28,7 +28,7 @@ function edit_ajaxSubmitQuestion(array,callback) {
 
     $.ajax({
         type: "post",
-        url: "http://gogogo.synology.me/api/psychologicaltest/addrecord.php",
+        url: "http://gogogo.synology.me/api/vote/addrecord.php",
         data: {
             "id": array.id,
             "deviceid": getDeviceID(),
@@ -38,6 +38,7 @@ function edit_ajaxSubmitQuestion(array,callback) {
             "choiceNum": array.choiceNum,
             "answer": array.answer,
             "result": array.result,
+            "markeddel": array.markeddel,
             "lang": lang
         },
         dataType: "json",
@@ -51,6 +52,7 @@ function edit_ajaxSubmitQuestion(array,callback) {
     });
 }
 
+
 function edit_ajaxGetExamType(callback) {
     if (typeof(callback) != "function") {
         callback = function(response) {
@@ -60,7 +62,7 @@ function edit_ajaxGetExamType(callback) {
 
     $.ajax({
         type: "post",
-        url: "http://gogogo.synology.me/api/psychologicaltest/gettype.php",
+        url: "http://gogogo.synology.me/api/vote/gettype.php",
         data: {
             "lang": lang
         },
