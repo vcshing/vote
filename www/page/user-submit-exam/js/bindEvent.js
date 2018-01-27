@@ -17,19 +17,14 @@ function userSubmitExamPageAddBindEvent(){
     }
     formData.answer=[]
     formData.result=[]
-  /*  for(var i = 0; i < parseInt(formData.choiceNum) ; i++) {
+    for(var i = 0; i < parseInt(formData.choiceNum) ; i++) {
       if(formData["choiceAns" + digital2Alphabet(i)] == ""){
           alertMsg += '- 請輸入答案'+digital2Alphabet(i)+' <br/>'
       }else{
         formData["answer"].push(formData["choiceAns" + digital2Alphabet(i)])
       }
-      if(formData["choiceResult" + digital2Alphabet(i)] == ""){
-          alertMsg += '- 請輸入答案'+digital2Alphabet(i)+'分析結果 <br/>'
-      }else{
-        formData["result"].push(formData["choiceResult" + digital2Alphabet(i)])
-      }
     }
-    */
+
     if(alertMsg!=""){
       app.dialog.alert(alertMsg,"資料缺失");
     }else{

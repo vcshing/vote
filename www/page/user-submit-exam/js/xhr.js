@@ -13,7 +13,6 @@ function ajaxSubmitQuestion(array,callback) {
             "question": array.question,
             "choiceNum": array.choiceNum,
             "answer": array.answer,
-            "result": array.result,
             "lang": lang
         },
         dataType: "json",

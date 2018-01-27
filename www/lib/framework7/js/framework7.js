@@ -3676,7 +3676,6 @@ var Request = {
 };
 
 function initTouch() {
-	debugger;
   var app = this;
   var params = app.params.touch;
   var useRipple = app.theme === 'md' && params.materialRipple;
