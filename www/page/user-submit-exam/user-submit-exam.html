@@ -29,9 +29,15 @@
           <li>
             <div class="item-content item-input">
               <div class="item-inner">
-                <div class="item-title item-label">{{subject}}</div>
+                <div class="item-title item-label"
+                style="-webkit-user-select: text;
+                     -khtml-user-select: text;
+                     -moz-user-select: text;
+                     -ms-user-select: text;
+                     -o-user-select: text;
+                     user-select: text">{{subject}}</div>
                 <div class="item-input-wrap">
-                  <input type="text" name="subject" class="subject" placeholder="Subject">
+                  <input type="text" name="subject" class="subject" placeholder="Subject" style="user-select:text;">
                 </div>
               </div>
             </div>
