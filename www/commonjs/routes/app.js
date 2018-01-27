@@ -16,7 +16,8 @@ var app = new Framework7({
     },
     data: function() {
         return {
-          "types" : ['iPhone 4', 'iPhone 4S']
+          "types" : ['iPhone 4', 'iPhone 4S'],
+          "test" :"test"
         }
     },
     methods: {

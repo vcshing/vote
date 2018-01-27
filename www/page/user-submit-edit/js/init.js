@@ -40,30 +40,17 @@ function userSubmitExamEditPageInit(page){
         ]
       });
       var answer = JSON.parse(response.result[0].answer)
-      var result = JSON.parse(response.result[0].result)
 
       var html ="";
       for(var i = 0; i < response.result[0].ansnumber; i++) {
         html += edit_renderChoice({
           "choiceAns": answer[i],
-          "choiceResult": result[i],
           "alphabet" : digital2Alphabet(i)
         });
       }
       //alert(html);
       $(".choiceList").html(html);
-      $(".choiceResult").trumbowyg({
-        btns: [
-            ['viewHTML'],
-            ['undo', 'redo'], // Only supported in Blink browsers
-            ['formatting'],
-            ['strong', 'em', 'del'],
-            ['foreColor', 'backColor'],
-            ['link'],
-            ['insertImage'],
-            ['removeformat']
-        ]
-      });
+
       edit_userSubmitExamPageAddBindEvent(page)
 
   })

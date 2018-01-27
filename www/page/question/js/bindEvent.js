@@ -1,22 +1,12 @@
 function bindQuestionInit(page){
 
   $(".resultPopClose").bind("click",function(e){
-    e.preventDefault();
-    if(openedResultPop){
-      app.popup.close()
-      openedResultPop = false
-    }
+
   })
 
   $(".chartClose").bind("click",function(e){
     e.preventDefault();
-    if(openedResultPop){
       app.popup.close()
-      app.popup.close()
-      app.popup.open(statisticsPop)
-    } else{
-      app.popup.close()
-    }
     //app.popup.close()
     //app.popup.close()
     //app.popup.open(statisticsPop)
@@ -26,23 +16,13 @@ function bindQuestionInit(page){
 
 function bindansConfirm(page){
   $(".ansConfirm").bind("click",function(e){
-    if($(this).hasClass("popup-open")){
-      openedResultPop=true;
-      resultPop =app.popup.get().$el;
-
-      var result= $(".questionAns input:radio:checked").parent().find(".result").html();
-      var ans= $(".questionAns input:radio:checked").parent().find(".answer").html();
-      result = result.trim()
-    //  app.dialog.alert(ans,"分析");
-      $(".selectAnswer").html(htmlDecode(result))
-      $(".selectAnswerTitle").html(htmlDecode(ans))
-
+    if($(this).hasClass("isAnsSelected")){
       ajaxSubmitResult({
         "questionid": page.detail.route.query.id,
         "answerIndex": $(".questionAns input:radio:checked").val()
       },
       function(){
-
+        showToast("謝謝投票!");
       })
     }else{
       showToast("你沒有選擇答案哦!");
@@ -50,7 +30,7 @@ function bindansConfirm(page){
   })
 
   $('input[type=radio][name="ansOptionBox"]').change(function() {
-      $(".ansConfirm").addClass("popup-open")
+      $(".ansConfirm").addClass("isAnsSelected")
   })
 }
 

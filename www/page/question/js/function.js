@@ -145,7 +145,7 @@ function drawChartbk(chartArr) {
 function addFacebookFrame(page){
   $(".fbcomment").attr("width",$(window).width() )
   $(".fbcomment").attr("src",
-  'http://gogogo.synology.me/facebook/?'+
+  'http://gogogo.synology.me/facebook/vote/?'+
   'id=' + page.detail.route.query.id +
   'width='+  (parseInt($(window).width())-100))
 }

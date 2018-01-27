@@ -13,33 +13,28 @@ function edit_userSubmitExamPageAddBindEvent(page){
         alertMsg += '- 請輸入問題 <br/>'
     }
     if(formData.choiceNum == "0"){
-        alertMsg += '- 請輸入答案數量 <br/>'
+        alertMsg += '- 請輸入選擇數量 <br/>'
     }
     formData.answer=[]
     formData.result=[]
-    for(var i = 0; i < parseInt(formData.choiceNum) ; i++) {
+      for(var i = 0; i < parseInt(formData.choiceNum) ; i++) {
       if(formData["choiceAns" + digital2Alphabet(i)] == ""){
           alertMsg += '- 請輸入答案'+digital2Alphabet(i)+' <br/>'
       }else{
         formData["answer"].push(formData["choiceAns" + digital2Alphabet(i)])
       }
-      if(formData["choiceResult" + digital2Alphabet(i)] == ""){
-          alertMsg += '- 請輸入答案'+digital2Alphabet(i)+'分析結果 <br/>'
-      }else{
-        formData["result"].push(formData["choiceResult" + digital2Alphabet(i)])
-      }
     }
+
     if(alertMsg!=""){
       app.dialog.alert(alertMsg,"資料缺失");
     }else{
       formData.id = page.detail.route.query.id;
       edit_ajaxSubmitQuestion(formData,function(response){
-          app.dialog.alert("測驗已經刊登","謝謝");
-            app.view.current.router.navigate("/?refresh=1")
+          app.dialog.alert("投票已經刊登","謝謝");
+          app.view.current.router.navigate("/?refresh=1")
       })
     }
   });
-
 
   $$('.deleteBtn').on('click', function(){
     app.dialog.confirm('永久刪除題目?', function () {
@@ -47,7 +42,7 @@ function edit_userSubmitExamPageAddBindEvent(page){
         "id" : page.detail.route.query.id,
         "markeddel" : 1
       },function(response){
-          app.dialog.alert("測驗已經刪除","謝謝");
+          app.dialog.alert("投票已經刪除","謝謝");
             app.view.current.router.navigate("/?refresh=1")
       })
     });
@@ -65,37 +60,25 @@ function edit_userSubmitExamPageAddBindEvent(page){
     for(var i = 0; i < 10; i++) {
 
       var choiceAnsEle= $(".choiceAns" + digital2Alphabet(i));
-      var choiceResultEle= $(".choiceResult" + digital2Alphabet(i));
+  //    var choiceResultEle= $(".choiceResult" + digital2Alphabet(i));
       //  debugger;
       if(choiceAnsEle.val() != undefined && choiceAnsEle.val() != ""){
         choiceAnsArr[i] = choiceAnsEle.val()
       }
-      if(choiceResultEle != undefined && choiceResultEle != ""){
-        choiceResultArr[i] = choiceResultEle.val()
-      }
+    //  if(choiceResultEle != undefined && choiceResultEle != ""){
+    //    choiceResultArr[i] = choiceResultEle.val()
+//    }
     }
     var html ="";
     for(var i = 0; i < $(".choiceNum").val(); i++) {
       html += edit_renderChoice({
         "choiceAns":choiceAnsArr[i] == undefined ? "" : choiceAnsArr[i],
-        "choiceResult":choiceResultArr[i] == undefined ? "" : choiceResultArr[i],
         "alphabet" : digital2Alphabet(i)
       });
     }
     //alert(html);
     $(".choiceList").html(html);
 
-    $(".choiceResult").trumbowyg({
-      btns: [
-          ['viewHTML'],
-          ['undo', 'redo'], // Only supported in Blink browsers
-          ['formatting'],
-          ['strong', 'em', 'del'],
-          ['foreColor', 'backColor'],
-          ['link'],
-          ['insertImage'],
-          ['removeformat']
-      ]
-    });
+
   });
 }

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget android-versionCode="1" id="com.skyexplorer.vote" version="0.0.11" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>投票平台</name>
+    <name>匿名投票平台</name>
     <description>
-      投票平台
+      匿名投票平台
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
        Sky Explorer

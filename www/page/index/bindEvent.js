@@ -15,10 +15,14 @@ function bindType() {
                 html += renderTopicList(result)
             })
             $(".topicList").html(html);
-            page = 2;
+            page = 1;
+
             if (response.hasNextPage == 0) {
                 app.infiniteScroll.destroy('.infinite-scroll-content');
-                $$('.infinite-scroll-preloader').remove();
+                $$('.infinite-scroll-preloader').hide();
+            } else {
+                app.infiniteScroll.create('.infinite-scroll-content');
+                $$('.infinite-scroll-preloader').show();
             }
         })
 
@@ -44,7 +48,7 @@ $$('.infinite-scroll-content').on('infinite', function() {
 
         if (response.hasNextPage == 0) {
             app.infiniteScroll.destroy('.infinite-scroll-content');
-            $$('.infinite-scroll-preloader').remove();
+            $$('.infinite-scroll-preloader').hide();
         }
         allowInfinite = true;
     })

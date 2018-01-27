@@ -6,8 +6,8 @@ var admobid = {};
 
 
 appConfigArr={
-  "appName" :	"心理測驗",
-  "appDescription"	:	"心理測驗",
+  "appName" :	"投票",
+  "appDescription"	:	"投票",
   "androidAppLink"	:"https://play.google.com/store/apps/details?id=com.skyexplorer.vote",
   "androidAdmobBannerID"	:"ca-app-pub-3715336230214756/9247537937",
   "androidAdmobInterstitialID"	:"ca-app-pub-3715336230214756/6238231210",

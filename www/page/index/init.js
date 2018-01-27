@@ -3,7 +3,7 @@ function init() {
 
     //alert(1);
     //app.view.current.router.navigate("/comments/?id="+1)
-    var page = 2;
+     page = 1;
     ajaxGetTopicList({
         "page": 1,
         "type": $(".type").val(),
@@ -14,11 +14,11 @@ function init() {
         $(response.result).each(function(index, result) {
             html += renderTopicList(result)
         })
-        page = 2;
+
         $(".topicList").html(html);
         if (response.hasNextPage == 0) {
             app.infiniteScroll.destroy('.infinite-scroll-content');
-            $$('.infinite-scroll-preloader').remove();
+            $$('.infinite-scroll-preloader').hide();
         }
     })
     setTimeout(function(){
@@ -34,8 +34,7 @@ function init() {
 
           bindType();
       })
-
-    },3000)
+    },2000)
     var $ptrContent = $$('.ptr-content');
     //debugger;
     $ptrContent.on('ptr:refresh', function (e) {

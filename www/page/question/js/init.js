@@ -23,7 +23,7 @@ function userReadExamPageInit(page) {
         $(".question").html(response.result[0].question);
         $(".questionTitle").html(response.result[0].title);
 
-        $(".question").find("img").attr("width","100%")
+          $(".question").find("img").css("max-width","100%")
         bindansConfirm(page)
         bindStatistics(page)
     })
