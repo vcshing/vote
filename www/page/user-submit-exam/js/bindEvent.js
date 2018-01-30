@@ -9,7 +9,7 @@ function userSubmitExamPageAddBindEvent(){
     if(formData.subject == ""){
         alertMsg += '- 請輸入題目 <br/>'
     }
-    if(formData.subject == ""){
+    if(formData.question == ""){
         alertMsg += '- 請輸入問題 <br/>'
     }
     if(formData.choiceNum == "0"){
