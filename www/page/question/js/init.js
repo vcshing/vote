@@ -20,7 +20,7 @@ function userReadExamPageInit(page) {
 
         $(".questionAns").html(html);
 
-        $(".question").html(response.result[0].question);
+        $(".question").html(htmlDecode(response.result[0].question));
         $(".questionTitle").html(response.result[0].title);
 
           $(".question").find("img").css("max-width","100%")
