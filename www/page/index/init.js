@@ -1,8 +1,14 @@
 function init() {
     $.trumbowyg.svgPath = 'commonjs/library/editor/icons.svg';
 
-    //alert(1);
-    //app.view.current.router.navigate("/comments/?id="+1)
+    if(lang==""){
+      setTimeout(function(){
+          selectLang();
+      },1000)
+    }
+    bindMain();
+    bindInfinite()
+
      page = 1;
     ajaxGetTopicList({
         "page": 1,
@@ -21,20 +27,20 @@ function init() {
             $$('.infinite-scroll-preloader').hide();
         }
     })
-    setTimeout(function(){
+
       ajaxGetExamType(function(response) {
-          var html = "<option value=\"" + "" + "\">" + "全部" + "<\/option>";
+          var html = "<option value=\"" + "" + "\">" + appLangArr[defaultLang].other.all + "<\/option>";
           $(response.result).each(function(index, result) {
               html += "<option value=\"" + result.type_id + "\">" + result.type + "<\/option>";
           })
 
           $(".picker-type").find("select").html(html)
 
-          $(".picker-type").find(".item-after").html("全部")
+          $(".picker-type").find(".item-after").html(appLangArr[defaultLang].other.all)
 
           bindType();
       })
-    },2000)
+
     var $ptrContent = $$('.ptr-content');
     //debugger;
     $ptrContent.on('ptr:refresh', function (e) {

@@ -34,7 +34,8 @@ function ajaxGetTopicList(array,callback) {
         data: {
             "page": array.page,
             "type": array.type,
-            "id": array.id
+            "id": array.id,
+            "lang": lang
         },
         dataType: "json",
         success: function(response) {

@@ -3,7 +3,7 @@
     <div class="navbar">
       <div class="navbar-inner sliding">
         <div class="left">
-          <a href="#" class="link back" data-reload-current="true">
+          <a href="/?refresh=1" class="link " data-reload-current="true">
             <i class="icon icon-back" ></i>
             <span class="ios-only">Back</span>
           </a>
@@ -47,7 +47,7 @@
               <div class="item-inner">
                 <div class="item-title item-label">{{question}}</div>
                 <div class="item-input-wrap">
-                  <textarea name="question" placeholder="Question(please long hold to Edit)"></textarea>
+                  <textarea name="question" placeholder="Question"></textarea>
                 </div>
               </div>
             </div>
@@ -58,7 +58,7 @@
                 <div class="item-title item-label">{{ansNum}}</div>
                 <div class="item-input-wrap">
                   <select name="choiceNum" class="choiceNum">
-                    <option value="0">請選擇答案數量</option>
+                    <option value="0">{{ansNumDropDownDefault}}</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
@@ -90,14 +90,28 @@
     return {
         data: function() {
             //  debugger;
-            return {
-                "pageName": "提交投票題目",
-                "type": "種類",
-                "subject": "題目",
-                "question": "問題",
-                "questionImage": "問題圖片(如有)",
-                "ansNum": "答案數量",
-                "submit": "提交"
+            if (lang.indexOf("zh") != -1 ) {
+              return {
+                  "pageName": "提交投票題目",
+                  "type": "種類",
+                  "subject": "題目",
+                  "question": "問題",
+                  "questionImage": "問題圖片(如有)",
+                  "ansNum": "答案數量",
+                  "ansNumDropDownDefault": "請選擇答案數量",
+                  "submit": "提交"
+              }
+            } else {
+                return {
+                  "pageName": "Submit Vote Subject",
+                  "type": "Type",
+                  "subject": "Subject",
+                  "question": "Question",
+                  "questionImage": "QuestionImage(If Any)",
+                  "ansNum": "Answer Number",
+                  "ansNumDropDownDefault": "Please Select Answer Number.",
+                  "submit": "Submit"
+                }
             }
         },
         on: {

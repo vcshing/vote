@@ -66,9 +66,11 @@ function checkLang() {
   if (typeof(navigator.language) != "undefined") {
     if (navigator.language.split('-')[0] == "zh") {
       if (typeof(navigator.language.split('-')[1]) != "undefined") {
-        if (navigator.language.split('-')[1].toLowerCase() == "tw" ||
-          navigator.language.split('-')[1].toLowerCase() == "hk") {
+        if (navigator.language.split('-')[1].toLowerCase() == "tw" )
+        {
           var lang = "zh-TW"
+        }else if(  navigator.language.split('-')[1].toLowerCase() == "hk"){
+          var lang = "zh-HK"
         } else {
           var lang = "zh-CN"
         }
@@ -412,4 +414,45 @@ function showToast(value, type, position) {
   } catch (e) {
     alert(value)
   }
+}
+
+function selectLang(){
+
+    // Vertical Buttons
+      app.dialog.create({
+        title: 'Location',
+        text: 'Please Select Your Language',
+        buttons: [
+          {
+            cssClass:"text-align-center",
+            text: '繁體中文',
+            onClick: function(){
+              $(".hkversion").trigger("click");
+            }
+          },
+          {
+            cssClass:"text-align-center",
+            text: 'English',
+            onClick: function(){
+              $(".enversion").trigger("click");
+            }
+          },
+          {
+            cssClass:"text-align-center",
+            text: checkLang(),
+            onClick: function(){
+              $(".interversion").trigger("click");
+            }
+          },
+        ],
+        verticalButtons: true,
+        cssClass:"text-align-center",
+        on: {
+          open: function () {
+
+          }
+        }
+      }).open();
+
+
 }

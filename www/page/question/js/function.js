@@ -147,5 +147,6 @@ function addFacebookFrame(page){
   $(".fbcomment").attr("src",
   'http://gogogo.synology.me/facebook/vote/?'+
   'id=' + page.detail.route.query.id +
+  'lang=' + lang +
   'width='+  (parseInt($(window).width())-100))
 }

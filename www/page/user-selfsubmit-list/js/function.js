@@ -17,5 +17,9 @@ function selfList_renderTopicList(array){
 }
 
 function selfList_redirectQuestionPage(index){
-    app.view.current.router.navigate("/user-submit-edit/?id="+ index)
+  if(index == 0){
+    app.view.current.router.navigate("/user-submit-exam/?id="+ index)
+  }else{
+      app.view.current.router.navigate("/user-submit-edit/?id="+ index)
+  }
 }
