@@ -10,7 +10,7 @@ function userSubmitExamPageAddBindEvent() {
         if (formData.subject == "") {
             alertMsg += appLangArr[defaultLang].alertMsg.subject
         }
-        if (formData.subject == "") {
+        if (formData.question == "") {
             alertMsg += appLangArr[defaultLang].alertMsg.question
         }
         if (formData.choiceNum == "0") {
