@@ -2,6 +2,7 @@ function edit_userSubmitExamPageAddBindEvent(page) {
     $$('.submitForm').on('click', function() {
         var formData = app.form.convertToData('#my-form');
 
+<<<<<<< HEAD
         var alertMsg = "";
         if (formData.type == "") {
             alertMsg += appLangArr[defaultLang].alertMsg.type
@@ -24,6 +25,30 @@ function edit_userSubmitExamPageAddBindEvent(page) {
                 formData["answer"].push(formData["choiceAns" + digital2Alphabet(i)])
             }
         }
+=======
+    var alertMsg ="";
+    if(formData.type == ""){
+      alertMsg += '- 請輸入種類 <br/>'
+    }
+    if(formData.subject == ""){
+        alertMsg += '- 請輸入題目 <br/>'
+    }
+    if(formData.question == ""){
+        alertMsg += '- 請輸入問題 <br/>'
+    }
+    if(formData.choiceNum == "0"){
+        alertMsg += '- 請輸入選擇數量 <br/>'
+    }
+    formData.answer=[]
+    formData.result=[]
+      for(var i = 0; i < parseInt(formData.choiceNum) ; i++) {
+      if(formData["choiceAns" + digital2Alphabet(i)] == ""){
+          alertMsg += '- 請輸入答案'+digital2Alphabet(i)+' <br/>'
+      }else{
+        formData["answer"].push(formData["choiceAns" + digital2Alphabet(i)])
+      }
+    }
+>>>>>>> origin/master
 
         if (alertMsg != "") {
             app.dialog.alert(alertMsg, appLangArr[defaultLang].alertMsg.missingdata);
