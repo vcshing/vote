@@ -47,7 +47,9 @@ appLangArr = {
             "submitmsg": "投票已經刊登",
             "thank": "謝謝",
             "del": "永久刪除題目?",
-            "delsuccess": "投票已經刪除"
+            "delsuccess": "投票已經刪除",
+            "votesuccess": "謝謝投票!",
+            "missingans":"你沒有選擇答案哦!"
         }
 
     },
@@ -78,7 +80,9 @@ appLangArr = {
             "submitmsg": "Vote have been published",
             "thank": "Thank you",
             "del": "Confirm to delete?",
-            "delsuccess": "Delete Successful"
+            "delsuccess": "Delete Successful",
+            "votesuccess": "Thank you for voted!",
+            "missingans":"Please choose a answer!^^"
         }
     }
 }

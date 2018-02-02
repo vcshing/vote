@@ -22,10 +22,10 @@ function bindansConfirm(page){
         "answerIndex": $(".questionAns input:radio:checked").val()
       },
       function(){
-        showToast("謝謝投票!");
+        showToast( appLangArr[defaultLang].alertMsg.votesuccess);
       })
     }else{
-      showToast("你沒有選擇答案哦!");
+      showToast(appLangArr[defaultLang].alertMsg.missingans);
     }
   })
 

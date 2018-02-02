@@ -34,7 +34,10 @@
     return {
         data: function() {
             //  debugger;
-            return {
+
+
+            if (lang.indexOf("zh") != -1 ) {
+              return {
                 "pageName": "我提交的投票題目",
                 "type": "種類",
                 "subject": "題目",
@@ -42,6 +45,17 @@
                 "questionImage": "問題圖片(如有)",
                 "ansNum": "答案數量",
                 "submit": "提交"
+              }
+            } else {
+                return {
+                  "pageName": "My publish Vote",
+                  "type": "Type",
+                  "subject": "Subject",
+                  "question": "Question",
+                  "questionImage": "QuestionImage(If Any)",
+                  "ansNum": "Answer Number",
+                  "submit": "Submit"
+                }
             }
         },
         on: {

@@ -18,6 +18,7 @@ function userReadStatisticsInit(page) {
         }
         chartArr["title"] = response.result[0].title
         chartArr["question"] = response.result[0].question
+
         google.charts.setOnLoadCallback(function() { drawChart(chartArr); });
     })
 

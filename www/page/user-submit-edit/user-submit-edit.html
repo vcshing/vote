@@ -52,7 +52,7 @@
                 <div class="item-title item-label">{{ansNum}}</div>
                 <div class="item-input-wrap">
                   <select name="choiceNum" class="choiceNum">
-                    <option value="0">請選擇答案數量</option>
+                    <option value="0">{{ansNumDropDownDefault}}</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
@@ -88,15 +88,30 @@
     return {
         data: function() {
             //  debugger;
-            return {
-                "pageName": "提交投票題目",
-                "type": "種類",
-                "subject": "題目",
-                "question": "問題",
-                "questionImage": "問題圖片(如有)",
-                "ansNum": "答案數量",
-                "submit": "提交",
-                "delete": "永久刪除"
+            if (lang.indexOf("zh") != -1 ) {
+              return {
+                  "pageName": "編輯投票題目",
+                  "type": "種類",
+                  "subject": "題目",
+                  "question": "問題",
+                  "questionImage": "問題圖片(如有)",
+                  "ansNum": "答案數量",
+                  "ansNumDropDownDefault": "請選擇答案數量",
+                  "submit": "提交",
+                  "delete": "永久刪除"
+              }
+            } else {
+                return {
+                  "pageName": "Edit Vote",
+                  "type": "Type",
+                  "subject": "Subject",
+                  "question": "Question",
+                  "questionImage": "QuestionImage(If Any)",
+                  "ansNum": "Answer Number",
+                  "ansNumDropDownDefault": "Please Select Answer Number.",
+                  "submit": "Submit",
+                  "delete": "Delete"
+                }
             }
         },
         on: {
